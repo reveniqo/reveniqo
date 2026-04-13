@@ -1,0 +1,1262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Reveniqo — AI Automation for Marketing Agencies</title>
+
+<!-- Favicon & App Icons -->
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"/>
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"/>
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"/>
+<link rel="manifest" href="/site.webmanifest"/>
+<meta name="theme-color" content="#06060f"/>
+
+<!-- SEO Meta Tags -->
+<meta name="description" content="Reveniqo builds AI automation systems for marketing agencies — automate lead follow-up, client onboarding, and reporting. Save 100+ hours/month."/>
+<meta name="keywords" content="AI automation agency, marketing agency automation, lead automation, client onboarding automation, AI reporting, Make.com, GPT-4 automation"/>
+<meta name="author" content="Reveniqo"/>
+<meta name="robots" content="index, follow"/>
+<link rel="canonical" href="https://reveniqo.com/"/>
+
+<!-- Open Graph (LinkedIn, Facebook previews) -->
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://reveniqo.com/"/>
+<meta property="og:title" content="Reveniqo — AI Automation for Marketing Agencies"/>
+<meta property="og:description" content="We build AI systems that help marketing agencies save 100+ hours/month, convert more leads, and scale faster. Book a free audit."/>
+<meta property="og:image" content="https://reveniqo.com/android-chrome-512x512.png"/>
+<meta property="og:site_name" content="Reveniqo"/>
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Reveniqo — AI Automation for Marketing Agencies"/>
+<meta name="twitter:description" content="AI systems that help marketing agencies save 100+ hours/month and scale faster."/>
+<meta name="twitter:image" content="https://reveniqo.com/android-chrome-512x512.png"/>
+
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<style>
+:root {
+  --bg: #06060f;
+  --bg2: #0d0d1e;
+  --bg3: #12122a;
+  --surface: #16163a;
+  --border: rgba(124,111,255,0.15);
+  --border2: rgba(124,111,255,0.3);
+  --purple: #7C6FFF;
+  --teal: #3ECFB2;
+  --purple2: #5B4FE8;
+  --teal2: #0FAF92;
+  --text: #f0efff;
+  --muted: #8888b0;
+  --muted2: #5a5a80;
+  --accent: #FF6B6B;
+  --grad: linear-gradient(135deg, #7C6FFF, #3ECFB2);
+  --grad2: linear-gradient(135deg, #5B4FE8, #0FAF92);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* Grid noise bg */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(124,111,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(124,111,255,0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ─── NAV ─── */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 48px;
+  background: rgba(6,6,15,0.85);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  gap: 32px;
+  list-style: none;
+}
+
+.nav-links a {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  transition: color .2s;
+  letter-spacing: .02em;
+}
+
+.nav-links a:hover { color: var(--text); }
+
+.nav-cta {
+  background: var(--grad);
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 24px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: .02em;
+  transition: opacity .2s, transform .15s;
+  white-space: nowrap;
+}
+
+.nav-cta:hover { opacity: .9; transform: translateY(-1px); }
+
+/* ─── SECTIONS ─── */
+section { position: relative; z-index: 1; }
+
+/* ─── HERO ─── */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 120px 24px 80px;
+  overflow: hidden;
+}
+
+.hero-glow {
+  position: absolute;
+  width: 700px;
+  height: 700px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(124,111,255,0.12) 0%, transparent 70%);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -60%);
+  pointer-events: none;
+}
+
+.hero-glow2 {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(62,207,178,0.08) 0%, transparent 70%);
+  bottom: 10%;
+  right: 10%;
+  pointer-events: none;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(124,111,255,0.1);
+  border: 1px solid var(--border2);
+  border-radius: 999px;
+  padding: 6px 16px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--purple);
+  margin-bottom: 28px;
+  opacity: 0;
+  animation: fadeUp .6s .1s forwards;
+}
+
+.badge::before {
+  content: '';
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--teal);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%,100% { opacity: 1; transform: scale(1); }
+  50% { opacity: .5; transform: scale(1.3); }
+}
+
+.hero h1 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(42px, 6vw, 82px);
+  font-weight: 900;
+  line-height: 1.08;
+  letter-spacing: -.02em;
+  max-width: 900px;
+  opacity: 0;
+  animation: fadeUp .7s .25s forwards;
+}
+
+.hero h1 .grad-text {
+  background: var(--grad);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-sub {
+  margin-top: 20px;
+  font-size: 18px;
+  color: var(--muted);
+  max-width: 540px;
+  font-weight: 400;
+  opacity: 0;
+  animation: fadeUp .7s .4s forwards;
+}
+
+.hero-ctas {
+  margin-top: 40px;
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+  opacity: 0;
+  animation: fadeUp .7s .55s forwards;
+}
+
+.btn-primary {
+  background: var(--grad);
+  color: #fff;
+  text-decoration: none;
+  padding: 16px 36px;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: .02em;
+  transition: transform .15s, box-shadow .15s;
+  box-shadow: 0 0 40px rgba(124,111,255,0.3);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 60px rgba(124,111,255,0.5);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--text);
+  text-decoration: none;
+  padding: 16px 36px;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 500;
+  border: 1px solid var(--border2);
+  transition: background .15s, border-color .15s;
+}
+
+.btn-secondary:hover {
+  background: rgba(124,111,255,0.08);
+  border-color: var(--purple);
+}
+
+/* Stats bar */
+.stats-bar {
+  margin-top: 70px;
+  display: flex;
+  gap: 0;
+  justify-content: center;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: var(--bg2);
+  overflow: hidden;
+  opacity: 0;
+  animation: fadeUp .7s .7s forwards;
+  max-width: 720px;
+  width: 100%;
+}
+
+.stat-item {
+  flex: 1;
+  padding: 24px 20px;
+  text-align: center;
+  border-right: 1px solid var(--border);
+  position: relative;
+}
+
+.stat-item:last-child { border-right: none; }
+
+.stat-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 32px;
+  font-weight: 700;
+  background: var(--grad);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 6px;
+  font-weight: 500;
+  letter-spacing: .03em;
+}
+
+/* ─── TRUST STRIP ─── */
+.trust-strip {
+  padding: 20px 48px;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  background: var(--bg2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  font-size: 13px;
+  color: var(--muted2);
+  font-weight: 500;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+
+.trust-strip span { color: var(--muted); }
+
+.trust-dot {
+  width: 4px; height: 4px;
+  border-radius: 50%;
+  background: var(--border2);
+}
+
+/* ─── SYSTEMS ─── */
+.systems {
+  padding: 100px 48px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.section-tag {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin-bottom: 14px;
+  font-family: 'DM Mono', monospace;
+}
+
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(32px, 4vw, 52px);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -.01em;
+  max-width: 600px;
+}
+
+.section-title .grad-text {
+  background: var(--grad);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.systems-grid {
+  margin-top: 56px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.sys-card {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 32px 28px;
+  position: relative;
+  overflow: hidden;
+  transition: border-color .2s, transform .2s;
+  cursor: default;
+}
+
+.sys-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: var(--grad);
+  opacity: 0;
+  transition: opacity .2s;
+}
+
+.sys-card:hover {
+  border-color: var(--border2);
+  transform: translateY(-4px);
+}
+
+.sys-card:hover::before { opacity: 1; }
+
+.sys-icon {
+  width: 48px; height: 48px;
+  border-radius: 12px;
+  background: rgba(124,111,255,0.1);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  font-size: 22px;
+}
+
+.sys-card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  letter-spacing: -.01em;
+}
+
+.sys-card p {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.sys-tag {
+  display: inline-block;
+  margin-top: 16px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  font-family: 'DM Mono', monospace;
+  color: var(--teal);
+  background: rgba(62,207,178,0.08);
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(62,207,178,0.2);
+}
+
+/* ─── HOW IT WORKS ─── */
+.how {
+  padding: 100px 48px;
+  background: var(--bg2);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.how-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.steps {
+  margin-top: 60px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  position: relative;
+}
+
+.steps::before {
+  content: '';
+  position: absolute;
+  top: 28px;
+  left: calc(16.66% + 28px);
+  right: calc(16.66% + 28px);
+  height: 1px;
+  background: linear-gradient(90deg, var(--purple), var(--teal));
+  opacity: 0.4;
+}
+
+.step {
+  padding: 0 32px;
+  position: relative;
+}
+
+.step-num {
+  width: 56px; height: 56px;
+  border-radius: 50%;
+  background: var(--bg3);
+  border: 2px solid var(--border2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  font-weight: 700;
+  background: var(--grad);
+  color: #fff;
+  margin-bottom: 24px;
+  position: relative;
+  z-index: 1;
+}
+
+.step h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.step p {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.step-detail {
+  margin-top: 16px;
+  font-size: 13px;
+  font-family: 'DM Mono', monospace;
+  color: var(--purple);
+  opacity: .8;
+}
+
+/* ─── ROI CALCULATOR ─── */
+.roi {
+  padding: 100px 48px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.roi-wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: start;
+  margin-top: 56px;
+}
+
+.roi-inputs {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 36px;
+}
+
+.roi-inputs h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 28px;
+}
+
+.input-group {
+  margin-bottom: 24px;
+}
+
+.input-group label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  color: var(--muted);
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+.input-group label span {
+  color: var(--teal);
+  font-weight: 600;
+  font-family: 'DM Mono', monospace;
+}
+
+input[type="range"] {
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+  background: var(--border);
+  outline: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 18px; height: 18px;
+  border-radius: 50%;
+  background: var(--purple);
+  border: 2px solid var(--bg);
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(124,111,255,0.5);
+}
+
+.roi-results {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.roi-card {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 24px 28px;
+  transition: border-color .2s;
+}
+
+.roi-card:hover { border-color: var(--border2); }
+
+.roi-card-label {
+  font-size: 12px;
+  color: var(--muted2);
+  font-weight: 600;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  font-family: 'DM Mono', monospace;
+  margin-bottom: 8px;
+}
+
+.roi-card-value {
+  font-family: 'Playfair Display', serif;
+  font-size: 36px;
+  font-weight: 700;
+  background: var(--grad);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+}
+
+.roi-card-sub {
+  font-size: 13px;
+  color: var(--muted);
+  margin-top: 6px;
+}
+
+.roi-highlight {
+  background: linear-gradient(135deg, rgba(124,111,255,0.1), rgba(62,207,178,0.1));
+  border-color: var(--border2);
+}
+
+/* ─── CASE STUDY ─── */
+.case {
+  padding: 100px 48px;
+  background: var(--bg2);
+  border-top: 1px solid var(--border);
+}
+
+.case-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.case-grid {
+  margin-top: 56px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.case-metrics {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.metric-card {
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 24px 20px;
+  text-align: center;
+  transition: transform .2s;
+}
+
+.metric-card:hover { transform: scale(1.02); }
+
+.metric-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 40px;
+  font-weight: 700;
+  background: var(--grad);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+}
+
+.metric-label {
+  font-size: 13px;
+  color: var(--muted);
+  margin-top: 8px;
+  font-weight: 500;
+}
+
+.case-story h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  line-height: 1.3;
+}
+
+.case-story p {
+  font-size: 15px;
+  color: var(--muted);
+  line-height: 1.8;
+  margin-bottom: 14px;
+}
+
+.quote-block {
+  margin-top: 24px;
+  padding: 20px 24px;
+  border-left: 3px solid var(--purple);
+  background: rgba(124,111,255,0.06);
+  border-radius: 0 12px 12px 0;
+  font-size: 15px;
+  color: var(--text);
+  font-style: italic;
+  line-height: 1.7;
+}
+
+.quote-attr {
+  margin-top: 10px;
+  font-style: normal;
+  font-size: 13px;
+  color: var(--muted);
+  font-weight: 500;
+}
+
+/* ─── RESULTS ─── */
+.results {
+  padding: 80px 48px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.results-list {
+  margin-top: 48px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.result-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 20px 20px;
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  transition: border-color .2s;
+}
+
+.result-item:hover { border-color: var(--border2); }
+
+.result-check {
+  width: 24px; height: 24px;
+  border-radius: 50%;
+  background: rgba(62,207,178,0.12);
+  border: 1px solid rgba(62,207,178,0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+  font-size: 12px;
+}
+
+.result-text {
+  font-size: 14px;
+  color: var(--text);
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+/* ─── CTA SECTION ─── */
+.cta-section {
+  padding: 100px 48px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-section::before {
+  content: '';
+  position: absolute;
+  width: 600px; height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(124,111,255,0.1), transparent 70%);
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.cta-inner {
+  max-width: 680px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.cta-section h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(36px, 5vw, 60px);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -.01em;
+  margin-bottom: 20px;
+}
+
+.cta-section p {
+  color: var(--muted);
+  font-size: 17px;
+  margin-bottom: 40px;
+  line-height: 1.7;
+}
+
+.cta-trust {
+  margin-top: 24px;
+  font-size: 13px;
+  color: var(--muted2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.cta-trust-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.cta-trust-icon {
+  width: 16px; height: 16px;
+  border-radius: 50%;
+  background: rgba(62,207,178,0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 9px;
+  color: var(--teal);
+}
+
+/* ─── FOOTER ─── */
+footer {
+  padding: 40px 48px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--bg);
+}
+
+footer p {
+  font-size: 13px;
+  color: var(--muted2);
+}
+
+footer a {
+  color: var(--purple);
+  text-decoration: none;
+  font-size: 13px;
+}
+
+/* ─── ANIMATIONS ─── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity .65s, transform .65s;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 768px) {
+  nav { padding: 16px 20px; }
+  .nav-links { display: none; }
+  .hero { padding: 100px 20px 60px; }
+  .stats-bar { flex-direction: column; }
+  .stat-item { border-right: none; border-bottom: 1px solid var(--border); }
+  .systems, .how, .roi, .case, .results, .cta-section { padding: 60px 20px; }
+  .systems-grid, .steps, .roi-wrap, .case-grid, .results-list { grid-template-columns: 1fr; }
+  .steps::before { display: none; }
+  .case-metrics { grid-template-columns: 1fr 1fr; }
+  footer { flex-direction: column; gap: 12px; text-align: center; }
+  .trust-strip { flex-wrap: wrap; padding: 16px; font-size: 11px; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">
+    <svg width="130" viewBox="0 0 340 90" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="ng" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stop-color="#7C6FFF"/>
+          <stop offset="100%" stop-color="#3ECFB2"/>
+        </linearGradient>
+      </defs>
+      <path d="M 50 82 A 34 34 0 1 1 83 65" fill="none" stroke="url(#ng)" stroke-width="3.5" stroke-linecap="round"/>
+      <rect x="30" y="62" width="6" height="16" rx="3" fill="#7C6FFF" opacity="0.65"/>
+      <rect x="39" y="53" width="6" height="25" rx="3" fill="#9482FF" opacity="0.82"/>
+      <rect x="48" y="43" width="6" height="35" rx="3" fill="url(#ng)"/>
+      <rect x="57" y="50" width="6" height="28" rx="3" fill="#3ECFB2" opacity="0.8"/>
+      <rect x="66" y="57" width="6" height="21" rx="3" fill="#3ECFB2" opacity="0.55"/>
+      <circle cx="83" cy="65" r="5" fill="url(#ng)"/>
+      <text x="102" y="62" font-family="Georgia,serif" font-size="34" font-weight="700" letter-spacing="-0.5">
+        <tspan fill="#FFFFFF">Reven</tspan><tspan fill="url(#ng)">iqo</tspan>
+      </text>
+      <text x="103" y="81" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10.5" font-weight="400" letter-spacing="3.2" fill="#7777aa">AI AUTOMATION AGENCY</text>
+    </svg>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#systems">Systems</a></li>
+    <li><a href="#how">Process</a></li>
+    <li><a href="#results">Results</a></li>
+    <li><a href="#calculator">ROI Calc</a></li>
+  </ul>
+  <a href="https://calendly.com/reveniqo/intro-call" target="_blank" class="nav-cta">Book Free Audit →</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-glow"></div>
+  <div class="hero-glow2"></div>
+  <div class="badge">AI-Powered Growth Systems</div>
+  <h1>We Build AI Systems That Make Marketing Agencies <span class="grad-text">Unstoppable</span></h1>
+  <p class="hero-sub">Automate your workflows, convert more leads, and reclaim 100+ hours every month — without hiring another person.</p>
+  <div class="hero-ctas">
+    <a href="https://calendly.com/reveniqo/intro-call" target="_blank" class="btn-primary">Get Free Agency Audit →</a>
+    <a href="#calculator" class="btn-secondary">Calculate Your ROI</a>
+  </div>
+  <div class="stats-bar">
+    <div class="stat-item">
+      <div class="stat-num" id="cnt1">0</div>
+      <div class="stat-label">Hours saved per month</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num" id="cnt2">0%</div>
+      <div class="stat-label">Average conversion lift</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num" id="cnt3">0</div>
+      <div class="stat-label">Days to first automation live</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num" id="cnt4">0%</div>
+      <div class="stat-label">Client retention rate</div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST STRIP -->
+<div class="trust-strip">
+  <span>Trusted by marketing agencies in</span>
+  <div class="trust-dot"></div>
+  <span>US</span>
+  <div class="trust-dot"></div>
+  <span>UK</span>
+  <div class="trust-dot"></div>
+  <span>UAE</span>
+  <div class="trust-dot"></div>
+  <span>Australia</span>
+  <div class="trust-dot"></div>
+  <span>Canada</span>
+  <div class="trust-dot"></div>
+  <span>Pakistan</span>
+</div>
+
+<!-- SYSTEMS -->
+<section class="systems" id="systems">
+  <div class="reveal">
+    <div class="section-tag">// Core Systems</div>
+    <div class="section-title">Three systems. One mission: <span class="grad-text">scale faster.</span></div>
+  </div>
+  <div class="systems-grid">
+    <div class="sys-card reveal">
+      <div class="sys-icon">⚡</div>
+      <h3>AI Lead Conversion System</h3>
+      <p>Capture every inbound lead, qualify them with AI, and trigger personalised follow-up sequences automatically — 24/7, no human needed.</p>
+      <span class="sys-tag">Saves 12+ hrs/week</span>
+    </div>
+    <div class="sys-card reveal">
+      <div class="sys-icon">🚀</div>
+      <h3>Client Onboarding Automation</h3>
+      <p>From signed contract to fully onboarded client in hours, not days. Automated intake forms, welcome sequences, and kickoff prep — all hands-free.</p>
+      <span class="sys-tag">Saves 8+ hrs/client</span>
+    </div>
+    <div class="sys-card reveal">
+      <div class="sys-icon">📊</div>
+      <h3>Automated Reporting Engine</h3>
+      <p>AI pulls your data, writes the narrative, and delivers polished monthly reports to every client automatically. No more Sunday nights in spreadsheets.</p>
+      <span class="sys-tag">Saves 20+ hrs/month</span>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how" id="how">
+  <div class="how-inner">
+    <div class="reveal">
+      <div class="section-tag">// The Process</div>
+      <div class="section-title">Live in <span class="grad-text">5 days,</span> not 5 months.</div>
+    </div>
+    <div class="steps">
+      <div class="step reveal">
+        <div class="step-num">01</div>
+        <h3>Audit</h3>
+        <p>We map every workflow in your agency and identify exactly where AI can save the most time and money. Free, no strings attached.</p>
+        <div class="step-detail">→ 45-min Zoom call</div>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">02</div>
+        <h3>Build</h3>
+        <p>We build and configure your custom AI automation systems using Make.com, GPT-4, and your existing tools. Zero disruption to your team.</p>
+        <div class="step-detail">→ 3–5 business days</div>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">03</div>
+        <h3>Scale</h3>
+        <p>Your systems go live. We monitor, optimise, and expand them as your agency grows. You keep all the hours you get back.</p>
+        <div class="step-detail">→ Ongoing support</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ROI CALCULATOR -->
+<section class="roi" id="calculator">
+  <div class="reveal">
+    <div class="section-tag">// ROI Calculator</div>
+    <div class="section-title">See your <span class="grad-text">exact savings</span> before you commit.</div>
+  </div>
+  <div class="roi-wrap">
+    <div class="roi-inputs reveal">
+      <h3>Your Agency Numbers</h3>
+      <div class="input-group">
+        <label>Team size <span id="lbl-team">5 people</span></label>
+        <input type="range" id="r-team" min="1" max="30" value="5" oninput="calcROI()"/>
+      </div>
+      <div class="input-group">
+        <label>Avg hourly rate <span id="lbl-rate">$75/hr</span></label>
+        <input type="range" id="r-rate" min="20" max="300" value="75" step="5" oninput="calcROI()"/>
+      </div>
+      <div class="input-group">
+        <label>Hours/week on manual tasks <span id="lbl-hrs">15 hrs</span></label>
+        <input type="range" id="r-hrs" min="2" max="60" value="15" oninput="calcROI()"/>
+      </div>
+      <div class="input-group">
+        <label>Monthly leads <span id="lbl-leads">40 leads</span></label>
+        <input type="range" id="r-leads" min="5" max="500" value="40" step="5" oninput="calcROI()"/>
+      </div>
+    </div>
+    <div class="roi-results reveal">
+      <div class="roi-card roi-highlight">
+        <div class="roi-card-label">Hours reclaimed per month</div>
+        <div class="roi-card-value" id="res-hrs">240 hrs</div>
+        <div class="roi-card-sub">Automated away — given back to high-value work</div>
+      </div>
+      <div class="roi-card">
+        <div class="roi-card-label">Monthly cost savings</div>
+        <div class="roi-card-value" id="res-cost">$18,000</div>
+        <div class="roi-card-sub">Based on your team's hourly rate</div>
+      </div>
+      <div class="roi-card">
+        <div class="roi-card-label">Additional revenue potential</div>
+        <div class="roi-card-value" id="res-rev">$12,000</div>
+        <div class="roi-card-sub">From 30% conversion lift on automated leads</div>
+      </div>
+      <div class="roi-card roi-highlight">
+        <div class="roi-card-label">Total monthly impact</div>
+        <div class="roi-card-value" id="res-total">$30,000</div>
+        <div class="roi-card-sub">Conservative estimate. Most agencies see more.</div>
+      </div>
+      <a href="https://calendly.com/reveniqo/intro-call" target="_blank" class="btn-primary" style="width:100%;text-align:center;margin-top:8px;">Claim This ROI — Book Free Audit →</a>
+    </div>
+  </div>
+</section>
+
+<!-- CASE STUDY -->
+<section class="case">
+  <div class="case-inner">
+    <div class="reveal">
+      <div class="section-tag">// Case Study</div>
+      <div class="section-title">Real results. Real <span class="grad-text">agency.</span></div>
+    </div>
+    <div class="case-grid">
+      <div class="case-metrics reveal">
+        <div class="metric-card">
+          <div class="metric-num">37%</div>
+          <div class="metric-label">More booked calls</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-num">80+</div>
+          <div class="metric-label">Hours saved/month</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-num">100%</div>
+          <div class="metric-label">Lead follow-up automated</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-num">5 days</div>
+          <div class="metric-label">Time to go live</div>
+        </div>
+      </div>
+      <div class="case-story reveal">
+        <h3>How a 6-person agency doubled their booked calls without hiring anyone new</h3>
+        <p>A digital marketing agency was losing leads due to slow follow-ups and spending 20+ hours a month manually building client reports. Their team was stretched thin.</p>
+        <p>We built them three AI systems: an instant lead qualification + follow-up engine, an automated onboarding flow, and a report generator that delivers client reports in 60 seconds.</p>
+        <div class="quote-block">
+          "We went from chasing leads manually to having a system that follows up within 90 seconds of a form submission. Our booked call rate went up 37% in the first month."
+          <div class="quote-attr">— Agency Founder, Digital Marketing Agency</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESULTS -->
+<section class="results" id="results">
+  <div class="reveal">
+    <div class="section-tag">// What You Get</div>
+    <div class="section-title">Results you can <span class="grad-text">expect.</span></div>
+  </div>
+  <div class="results-list">
+    <div class="result-item reveal">
+      <div class="result-check">✓</div>
+      <div class="result-text">Save 100+ hours per month on manual repetitive work</div>
+    </div>
+    <div class="result-item reveal">
+      <div class="result-check">✓</div>
+      <div class="result-text">Increase lead conversions by 20–50% with instant AI follow-up</div>
+    </div>
+    <div class="result-item reveal">
+      <div class="result-check">✓</div>
+      <div class="result-text">Onboard new clients in hours, not days</div>
+    </div>
+    <div class="result-item reveal">
+      <div class="result-check">✓</div>
+      <div class="result-text">Eliminate manual reporting — AI writes it in 60 seconds</div>
+    </div>
+    <div class="result-item reveal">
+      <div class="result-check">✓</div>
+      <div class="result-text">Scale your agency without scaling your headcount</div>
+    </div>
+    <div class="result-item reveal">
+      <div class="result-check">✓</div>
+      <div class="result-text">Live automations within 5 business days, guaranteed</div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="cta-inner reveal">
+    <div class="section-tag" style="text-align:center;margin-bottom:16px">// Free Audit</div>
+    <h2>Ready to scale your agency <span class="grad-text">on autopilot?</span></h2>
+    <p>Book a free 45-minute audit. We'll map your biggest time drains, show you exactly what we'd automate, and give you the blueprint — even if you don't hire us.</p>
+    <a href="https://calendly.com/reveniqo/intro-call" target="_blank" class="btn-primary" style="font-size:17px;padding:18px 44px;">Book Your Free Audit →</a>
+    <div class="cta-trust">
+      <div class="cta-trust-item">
+        <div class="cta-trust-icon">✓</div>
+        No obligation
+      </div>
+      <div class="cta-trust-item">
+        <div class="cta-trust-icon">✓</div>
+        45 minutes only
+      </div>
+      <div class="cta-trust-item">
+        <div class="cta-trust-icon">✓</div>
+        You keep the blueprint
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 Reveniqo — AI Automation for Marketing Agencies</p>
+  <a href="https://calendly.com/reveniqo/intro-call" target="_blank">Book a Call →</a>
+</footer>
+
+<script>
+// Counter animation
+function animateCounter(el, target, suffix, duration) {
+  let start = 0;
+  const step = target / (duration / 16);
+  const timer = setInterval(() => {
+    start += step;
+    if (start >= target) { start = target; clearInterval(timer); }
+    el.textContent = Math.round(start) + suffix;
+  }, 16);
+}
+
+// Trigger counters when hero is visible
+const countersTriggered = { done: false };
+const heroObs = new IntersectionObserver((entries) => {
+  if (entries[0].isIntersecting && !countersTriggered.done) {
+    countersTriggered.done = true;
+    setTimeout(() => animateCounter(document.getElementById('cnt1'), 100, '+', 1200), 800);
+    setTimeout(() => animateCounter(document.getElementById('cnt2'), 37, '%', 1200), 900);
+    setTimeout(() => animateCounter(document.getElementById('cnt3'), 5, '', 800), 1000);
+    setTimeout(() => animateCounter(document.getElementById('cnt4'), 96, '%', 1200), 1100);
+  }
+}, { threshold: 0.3 });
+heroObs.observe(document.querySelector('.hero'));
+
+// Scroll reveal
+const revealObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+}, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+
+// ROI Calculator
+function calcROI() {
+  const team = +document.getElementById('r-team').value;
+  const rate = +document.getElementById('r-rate').value;
+  const hrs = +document.getElementById('r-hrs').value;
+  const leads = +document.getElementById('r-leads').value;
+
+  document.getElementById('lbl-team').textContent = team + (team === 1 ? ' person' : ' people');
+  document.getElementById('lbl-rate').textContent = '$' + rate + '/hr';
+  document.getElementById('lbl-hrs').textContent = hrs + ' hrs';
+  document.getElementById('lbl-leads').textContent = leads + ' leads';
+
+  const monthlyHrs = hrs * team * 4;
+  const costSave = Math.round(monthlyHrs * rate * 0.7 / 100) * 100;
+  const revPotential = Math.round(leads * 0.3 * rate * 10 / 1000) * 1000;
+  const total = costSave + revPotential;
+
+  document.getElementById('res-hrs').textContent = monthlyHrs + ' hrs';
+  document.getElementById('res-cost').textContent = '$' + costSave.toLocaleString();
+  document.getElementById('res-rev').textContent = '$' + revPotential.toLocaleString();
+  document.getElementById('res-total').textContent = '$' + total.toLocaleString();
+}
+
+calcROI();
+</script>
+</body>
+</html>
